@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:background="@color/blue"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:background="@drawable/background_detail">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="146dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/detailImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/logo"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_conversion_absoluteHeight="128dp"
+                tools:layout_conversion_absoluteWidth="117dp"
+                tools:layout_editor_absoluteX="10dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            >
+
+            <TextView
+                android:id="@+id/detailSpecialite"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="40dp"
+                android:hint="Docteur généraliste"
+                android:textSize="17dp"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp" />
+            <TextView
+                android:id="@+id/detailAdresse"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Batna rue 19 "
+                android:textSize="17dp"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                />
+
+            <TextView
+                android:id="@+id/detailEmail"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:layout_toEndOf="@+id/detailSpecialite"
+                android:layout_toRightOf="@+id/detailSpecialite"
+                android:hint="gs_rihani@esi.dz"
+                android:inputType="textEmailAddress"
+                android:textSize="17dp"
+
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp">
+                <TextView
+                    android:id="@+id/forget_pwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="10sp"
+       />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="411dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+
+                <Button
+                    android:id="@+id/confirmerButton"
+                    android:layout_width="150dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button_border"
+                    android:text="Prendre Rendez Vous"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/annulerButton"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/yellow_button"
+                    android:text="Demander Conseil"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="normal"
+                    app:backgroundTint="@color/yellow"
+                    app:strokeColor="@color/yellow" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp">
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

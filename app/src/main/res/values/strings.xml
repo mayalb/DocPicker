@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">DocPicker</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Parametres</string>
+
+    <string name="menu_home">Acceuil</string>
+    <string name="men_rendezvous">Rendez Vous</string>
+    <string name="menu_traitement">Traitement</string>
+    <string name="menu_conseil">Conseil</string>
+    <string name="menu_logout">Déconnecter</string>
+    <string name="rendezvous">Votre Rendez vous</string>
+</resources>

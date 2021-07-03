@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/rendezvousview"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/costum_item">
+
+
+    <TextView
+        android:id="@+id/NumRendezVous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rendez Vous"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.129" />
+
+    <TextView
+        android:id="@+id/NomMedRendezVsItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Docteur Safi"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dateRendezVousItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date : 14/09/2021"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.103"
+
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NomMedRendezVsItem"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <TextView
+        android:id="@+id/adresseRendezVousItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adresse : Batna"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toEndOf="@+id/NomMedRendezVsItem"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/HeureRendezVousItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heure : 17H30"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.272"
+
+        app:layout_constraintStart_toEndOf="@+id/dateRendezVousItem"
+
+        app:layout_constraintTop_toBottomOf="@+id/adresseRendezVousItem"
+        app:layout_constraintVertical_bias="0.38" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

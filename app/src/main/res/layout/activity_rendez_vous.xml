@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:background="@color/blue"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="23"
+        android:background="@drawable/background_detail">
+
+
+        <TextView
+
+            android:layout_width="304dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="68dp"
+            android:layout_marginLeft="68dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="39dp"
+            android:layout_marginRight="39dp"
+            android:layout_marginBottom="77dp"
+            android:text="@string/rendezvous"
+            android:textColor="@color/blue"
+            android:textSize="28sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="85dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="91dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="77dp"
+            android:text="Details de votre Rendez vous  "
+            android:textColor="#BDBDBD"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="396dp"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/RendezVousMedecin"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="40dp"
+                android:hint="Nom du medecin"
+                android:textSize="17dp"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp" />
+
+            <TextView
+                android:id="@+id/dateRendezVous"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="40dp"
+                android:hint="19/08/2021 "
+                android:textSize="17dp"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp" />
+
+            <TextView
+                android:id="@+id/heureRendezVous"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="40dp"
+                android:layout_toEndOf="@+id/dateRendezVous"
+                android:layout_toRightOf="@+id/dateRendezVous"
+                android:hint="Heure : 12h30"
+                android:textSize="17dp"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp" />
+            <TextView
+                android:id="@+id/adresseRendezVous"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="40dp"
+                android:layout_toEndOf="@+id/heureRendezVous"
+                android:layout_toRightOf="@+id/heureRendezVous"
+                android:hint="Boufarik bab el hara"
+                android:textSize="17dp"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp" />
+
+            <LinearLayout
+                android:layout_width="411dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+
+                <Button
+                    android:id="@+id/confirmerButton"
+                    android:layout_width="150dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button_border"
+                    android:text="Confirmer"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/annulerButton"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/yellow_button"
+                    android:text="Annuler"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="normal"
+                    app:backgroundTint="@color/yellow"
+                    app:strokeColor="@color/yellow" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="2"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp">
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

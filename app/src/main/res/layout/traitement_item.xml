@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/traitementview"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/costum_item">
+
+    <TextView
+        android:id="@+id/descriptionTraitement"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:text="Description"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toEndOf="@+id/DateTraitement"
+        app:layout_constraintTop_toBottomOf="@+id/medTraitement"
+        app:layout_constraintVertical_bias="0.609" />
+
+    <TextView
+        android:id="@+id/maladieTraitement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maladie : "
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/traitement"
+        app:layout_constraintVertical_bias="0.293" />
+
+    <TextView
+        android:id="@+id/medecinTraitement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+
+        android:text="Medecin: "
+        android:textStyle="bold"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
+
+        app:layout_constraintStart_toEndOf="@+id/traitement"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.165" />
+
+    <TextView
+        android:id="@+id/traitement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Traitement"
+        android:textColor="@color/blue"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.136" />
+
+    <TextView
+        android:id="@+id/DateTraitement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Durée"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/maladieTraitement"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <TextView
+        android:id="@+id/medTraitement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Médicaments:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+
+        app:layout_constraintStart_toEndOf="@+id/maladieTraitement"
+        app:layout_constraintTop_toBottomOf="@+id/medecinTraitement"
+        app:layout_constraintVertical_bias="0.292" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
