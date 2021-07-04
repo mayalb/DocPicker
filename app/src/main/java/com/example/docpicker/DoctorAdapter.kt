@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.docpicker.entity.Doctor
+import com.bumptech.glide.Glide
 class DoctorAdapter(val context: Context, var data:List<Doctor>): RecyclerView.Adapter<MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
@@ -22,14 +23,16 @@ class DoctorAdapter(val context: Context, var data:List<Doctor>): RecyclerView.A
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
       //  holder.img.setImageResource(data[position].img)
-        holder.nom.text=data[position].name
+        Glide.with(context).load(baseUrl+data[position].photo).into( holder.photo)
+        holder.nom.text=data[position].nom
         holder.prenom.text=data[position].prenom
         holder.num.text=data[position].phone
         holder.spec.text=data[position].specialite
 
+
         holder.direction.setOnClickListener { View->
-            val longitude=data[position].longitude
-            val latitude=data[position].latitude
+            val longitude=data[position].longitude.toFloat()
+            val latitude=data[position].latitude.toFloat()
             val geolocation=Uri.parse("geo:$latitude,$longitude")
             val intent= Intent(Intent.ACTION_VIEW,geolocation)
             if(intent.resolveActivity(context.packageManager)!=null){
@@ -49,10 +52,6 @@ class DoctorAdapter(val context: Context, var data:List<Doctor>): RecyclerView.A
             val intent= Intent(context,DetailDoctorActivity::class.java)
             intent.putExtra("doctor",data[position])
             context.startActivity(intent)
-
-
-
-
         }
 
 
@@ -67,7 +66,7 @@ class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val prenom= view.findViewById<TextView>(R.id.textViewprenom) as TextView
     val num= view.findViewById<TextView>(R.id.textViewphone) as TextView
     val spec= view.findViewById<TextView>(R.id.TextviewSpecialite) as TextView
-    val img= view.findViewById<ImageView>(R.id.imageView) as ImageView
+    val photo= view.findViewById<ImageView>(R.id.imageView) as ImageView
     val direction=view.findViewById<ImageView>(R.id.direction) as ImageView
     // val itemview=view.findViewById<MenuView.ItemView>(R.id.itemview) as MenuView.ItemView
 

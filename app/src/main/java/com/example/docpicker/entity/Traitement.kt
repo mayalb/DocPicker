@@ -8,6 +8,7 @@ data class Traitement (
                   val medeciment :String,
                   val medecin :String,
                   val duré:String,
+                  val date:String,
                   val id_traitement:Int
 
 ) : Serializable

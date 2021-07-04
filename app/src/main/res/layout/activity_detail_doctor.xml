@@ -29,8 +29,8 @@
 
             <ImageView
                 android:id="@+id/detailImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="126dp"
+                android:layout_height="146dp"
                 android:layout_marginTop="2dp"
                 android:src="@drawable/logo"
                 app:layout_constraintTop_toTopOf="parent"
@@ -38,7 +38,6 @@
                 tools:layout_conversion_absoluteWidth="117dp"
                 tools:layout_editor_absoluteX="10dp"
                 tools:srcCompat="@tools:sample/avatars" />
-
 
 
         </LinearLayout>

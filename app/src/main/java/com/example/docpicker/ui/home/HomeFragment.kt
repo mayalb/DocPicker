@@ -15,7 +15,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.docpicker.DoctorAdapter
 import com.example.docpicker.R
 import com.example.docpicker.entity.Doctor
+import com.example.docpicker.retrofit.RetrofitService
 import kotlinx.android.synthetic.main.fragment_home.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class HomeFragment : Fragment() {
 
@@ -35,33 +39,35 @@ class HomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        doctorsList.layoutManager=LinearLayoutManager(requireActivity())!!
-        doctorsList.adapter = DoctorAdapter(requireActivity(),loadData())
+        getdoctors()
+      //  var doctorsList=findViewById(R.id.doctorsList) as RecyclerView
+    //    doctorsList.layoutManager=LinearLayoutManager(requireActivity())!!
+      //  doctorsList.adapter = DoctorAdapter(requireActivity(),loadData())
 
     }
-    fun loadData():List<Doctor> {
-        val data = mutableListOf<Doctor>()
-        data.add(Doctor(R.drawable.logo,"Maya","Larbi","083743829","cardiologue",1,  "7.07",
-            "9.0"))
-        data.add(Doctor(R.drawable.logo,"Safi","Rihani","083743829","generaliste",1,  "7.07",
-            "9.0"))
-        data.add(Doctor(R.drawable.logo,"fatima","bz","0886789","Dentiste",1,  "7.07",
-            "9.0"))
-        data.add(Doctor(R.drawable.logo,"Rayane","Larbi","083743829","Dentiste", 2, "7.07",
-            "9.0"))
-        data.add(Doctor(R.drawable.logo,"Massi","Larbi","92878","cardiologue",1,  "7.07",
-            "9.0"))
-        data.add(Doctor(R.drawable.logo,"Rima","Amirat","083743829","pediatre",1,  "7.07",
-            "9.0"))
-        data.add(Doctor(R.drawable.logo,"Youcef","larbi","083743829","pediatre",1,  "7.07",
-            "9.0"))
-        data.add(Doctor(R.drawable.logo,"Ghada","flissi","0837989","ophtalmologue",1,  "7.07",
-            "9.0"))
-        data.add(Doctor(R.drawable.logo,"Naima","larbi","083743829","pediatre",1,  "7.07",
-            "9.0"))
-        data.add(Doctor(R.drawable.logo,"Said","larbi","083743829","dentiste",1,  "7.07",
-            "9.0"))
+    private fun getdoctors(){
+        val call = RetrofitService.endpoint.getdoctors()
+        call.enqueue(object: Callback<List<Doctor>> {
+            override fun onFailure(call: Call<List<Doctor>>, t: Throwable) {
+                Toast.makeText(requireActivity(), "Erreur de connexion", Toast.LENGTH_SHORT).show()
+            }
 
-        return data
+            override fun onResponse(call: Call<List<Doctor>>, response: Response<List<Doctor>>) {
+                if(response.isSuccessful){
+                    val data=response.body()
+                    if(data!=null){
+                        doctorsList.layoutManager=LinearLayoutManager(requireActivity())
+                        doctorsList.adapter = DoctorAdapter(requireActivity(),data)
+                    }else{
+                        Toast.makeText(requireActivity(), "Aucun medecin", Toast.LENGTH_SHORT).show()
+                    }
+                }else{
+                    Toast.makeText(requireActivity(), "Erreur est survenue", Toast.LENGTH_SHORT).show()
+                }
+
+
+            }
+
+        })
     }
 }

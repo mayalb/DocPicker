@@ -48,6 +48,7 @@ class LoginActivity : AppCompatActivity() {
                         val editor = prefs.edit()
                         if (loginResponse != null) {
                             editor.putString("userToken", loginResponse.token)
+                            editor.putInt("idUser",loginResponse.idUser)
                             editor.apply()
                             val intent=Intent(this@LoginActivity,MainActivity::class.java)
                             startActivity(intent)
