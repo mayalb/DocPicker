@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.docpicker.entity.Doctor
 import com.bumptech.glide.Glide
@@ -31,12 +32,14 @@ class DoctorAdapter(val context: Context, var data:List<Doctor>): RecyclerView.A
 
 
         holder.direction.setOnClickListener { View->
-            val longitude=data[position].longitude.toFloat()
-            val latitude=data[position].latitude.toFloat()
-            val geolocation=Uri.parse("geo:$latitude,$longitude")
-            val intent= Intent(Intent.ACTION_VIEW,geolocation)
+            val longitude=data[position].longitude
+            val latitude=data[position].latitude
+            Toast.makeText(context, "latitude{$latitude}", Toast.LENGTH_SHORT).show()
+           val uri = Uri.parse("http://maps.google.com/maps?daddr="+latitude+","+longitude)
+          val geolocation=Uri.parse("geo:$latitude,$longitude")
+          val intent= Intent(Intent.ACTION_VIEW,uri)
             if(intent.resolveActivity(context.packageManager)!=null){
-                context.startActivity(intent)
+               context.startActivity(intent)
             }
 
 

@@ -9,12 +9,12 @@ import com.example.docpicker.entity.Conseil
 @Dao
 interface ConseilDao {
 
-    @Query("select * from Conseil")
+    @Query("select * from conseil")
     fun getConseils():List<Conseil>
-    @Query("select * from Conseil where isSynchronized=0")
+    @Query("select * from conseil where isSynchronized=0")
     fun getMessagesToSynchronize():List<Conseil>
     @Insert
-    fun addMessage(vararg conseil: Conseil)
+    fun addConseil(vararg conseil: Conseil)
     @Update
     fun updateMessage(conseil: Conseil)
 

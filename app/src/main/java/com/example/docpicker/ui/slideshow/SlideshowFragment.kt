@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.docpicker.DoctorAdapter
+import com.example.docpicker.ProfilViewModel
 import com.example.docpicker.R
 import com.example.docpicker.RendezVousAdapter
 import com.example.docpicker.entity.Doctor
@@ -20,6 +22,7 @@ import kotlinx.android.synthetic.main.fragment_slideshow.*
 class SlideshowFragment : Fragment() {
 
     private lateinit var slideshowViewModel: SlideshowViewModel
+    lateinit var profilViewModel: ProfilViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -38,11 +41,12 @@ class SlideshowFragment : Fragment() {
         RendezVousList.layoutManager= LinearLayoutManager(requireActivity())!!
        RendezVousList.adapter = RendezVousAdapter(requireActivity(),loadData())
 
+
     }
     fun loadData():List<RendezVous> {
         val data = mutableListOf<RendezVous>()
-        data.add(RendezVous("Maya","Tizi","17/09/2020","17h6","Terminé",  1))
-        data.add(RendezVous("Safi","Batna","17/09/2020","17h6","En attente",  1))
+        data.add(RendezVous("Maya",1,"Tizi","17/09/2020","17h6",1,"Terminé",  1))
+        data.add(RendezVous("Safi",1,"Batna","17/09/2020","17h6",1,"En attente",  1))
 
         return data
     }

@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.example.docpicker.entity.LoginRequest
 import com.example.docpicker.entity.LoginResponse
 import com.example.docpicker.entity.User
@@ -17,16 +18,21 @@ import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
 
+
    //  var prefs SharedPreferences = context.getSharedPreferences("userToken"), Context.MODE_PRIVATE)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-       val prefs = getSharedPreferences("userToken",Context.MODE_PRIVATE)
-        if (prefs.getString("userToken", "")!=""){
-            val intent=Intent(this@LoginActivity,MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
+       val token = PrefUtil.with(this).getInt(PrefUtil.Keys.idUser, 0)
+       if (token !=0 ) {
+           val intent=Intent(this@LoginActivity,MainActivity::class.java)
+           startActivity(intent)
+           finish()
+       }
+      val prefs = getSharedPreferences("userToken",Context.MODE_PRIVATE)
+     //   if (prefs.getString("userToken", "")!=""){
+
+     //   }
 
 
 
@@ -47,11 +53,15 @@ class LoginActivity : AppCompatActivity() {
                         val loginResponse = response.body()
                         val editor = prefs.edit()
                         if (loginResponse != null) {
+                            Toast.makeText(this@LoginActivity, "loginResponse.idUser", Toast.LENGTH_SHORT).show()
                             editor.putString("userToken", loginResponse.token)
-                            editor.putInt("idUser",loginResponse.idUser)
+                            editor.putInt("idUser",loginResponse.id)
+                            PrefUtil.with(this@LoginActivity).save(PrefUtil.Keys.idUser,loginResponse.id)
+                            PrefUtil.with(this@LoginActivity).save(PrefUtil.Keys.KEY1,loginResponse.token)
                             editor.apply()
-                            val intent=Intent(this@LoginActivity,MainActivity::class.java)
-                            startActivity(intent)
+                            Toast.makeText(this@LoginActivity, loginResponse.id.toString(), Toast.LENGTH_SHORT).show()
+                             val intent=Intent(this@LoginActivity,MainActivity::class.java)
+                                 startActivity(intent)
                         }else{
                             Toast.makeText(this@LoginActivity, "Réponse serveur erronné", Toast.LENGTH_SHORT).show()
                         }
@@ -67,6 +77,7 @@ class LoginActivity : AppCompatActivity() {
 
                 }
             })
+
 
 
         }

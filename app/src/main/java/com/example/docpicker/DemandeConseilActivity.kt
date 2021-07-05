@@ -25,11 +25,11 @@ class DemandeConseilActivity : AppCompatActivity() {
         sendMessageButton.setOnClickListener { View->
             val messageinput= MessageConseil.text.toString()
             var id=0
-            val iduser= getSharedPreferences("userToken", Context.MODE_PRIVATE).getInt("idUser",id)
-             val message= Conseil(iduser,iddoctor,messageinput,0)
+            val token = PrefUtil.with(this).getInt(PrefUtil.Keys.idUser, 0)
+             val message= Conseil(token,iddoctor,messageinput,0)
             RoomService.context=this
-            RoomService.appDataBase.getConseilDao().addMessage(message)
-            Toast.makeText(this, "Aucunuuuu", Toast.LENGTH_SHORT).show()
+            RoomService.appDataBase.getConseilDao().addConseil(message)
+            Toast.makeText(this, "AFter first call", Toast.LENGTH_SHORT).show()
             scheduleSycn()
         }
     }

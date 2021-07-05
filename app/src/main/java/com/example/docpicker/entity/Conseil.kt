@@ -3,8 +3,8 @@ package com.example.docpicker.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-
-@Entity(tableName = "Conseil")
+import java.io.Serializable
+@Entity(tableName = "conseil")
 data class Conseil(
     val id_patient:Int,
     val id_doctor:Int,
@@ -12,6 +12,5 @@ data class Conseil(
     var isSynchronized:Int =0
 ){
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id_conseil")
-    var conseilId:Int?=null
+    var id_conseil:Int?=null
 }

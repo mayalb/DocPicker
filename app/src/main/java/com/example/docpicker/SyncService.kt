@@ -23,13 +23,14 @@ class SyncService(val ctx: Context, val workParamters: WorkerParameters): Listen
     override fun startWork(): ListenableFuture<Result> {
         future = SettableFuture.create()
         val message= RoomService.appDataBase.getConseilDao().getMessagesToSynchronize()
+        Toast.makeText(ctx, message[0].message.toString(), Toast.LENGTH_SHORT).show()
         addMessage(message[0])
-        Toast.makeText(ctx, "dakhel syncService", Toast.LENGTH_SHORT).show()
+
         return future
     }
 
     fun addMessage(conseil:Conseil) {
-        val result = RetrofitService.endpoint.addMessage(conseil)
+        val result = RetrofitService.endpoint.addConseil(conseil)
         result.enqueue(object: Callback<String> {
 
             override fun onFailure(call: Call<String>?, t: Throwable?) {
@@ -39,14 +40,10 @@ class SyncService(val ctx: Context, val workParamters: WorkerParameters): Listen
             }
 
             override fun onResponse(call: Call<String>?, response: Response<String>?) {
-
-
                 if(response?.isSuccessful!!) {
-
                     conseil.isSynchronized=1
-
                     RoomService.appDataBase.getConseilDao().updateMessage(conseil)
-                    RetrofitService.endpoint.addMessage(conseil)
+                    RetrofitService.endpoint.addConseil(conseil)
 
                     future.set(Result.success())
 

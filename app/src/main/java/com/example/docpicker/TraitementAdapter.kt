@@ -22,7 +22,7 @@ class TraitementAdapter(val context: Context, var data:List<Traitement>): Recycl
     override fun onBindViewHolder(holder: TraitementViewHolder, position: Int) {
         holder.medecin.text="Cher Docteur "+ data[position].medecin
         holder.description.text="Description : "+data[position].Description
-        holder.date.text="Durée : "+data[position].duré
+       // holder.date.text="Durée : "+data[position].duré
         holder.medicament.text="Heure : "+data[position].medeciment
         holder.maladie.text="Maladie : "+data[position].maladie
 

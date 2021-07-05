@@ -3,7 +3,7 @@ package com.example.docpicker.entity
 import java.io.Serializable
 
 data class LoginResponse(
-    var statusCode:Int,
+    var phone:String,
     var token: String,
-    var idUser: Int
+    var id: Int
 ) : Serializable

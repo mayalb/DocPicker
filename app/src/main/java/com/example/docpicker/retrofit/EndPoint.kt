@@ -4,10 +4,8 @@ package com.example.docpicker.retrofit
 import com.example.docpicker.entity.*
 import okhttp3.ResponseBody
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
+import java.util.*
 
 interface EndPoint {
     @POST("signin")
@@ -15,6 +13,8 @@ interface EndPoint {
     @GET("doctors")
     fun getdoctors(): Call<List<Doctor>>
     @POST("conseil")
-    fun addMessage(@Body conseil: Conseil):Call<String>
+    fun addConseil(@Body conseil: Conseil):Call<String>
+    @GET("traitements/{idPatient}")
+    fun getCurrentTreaments(@Path(value="idPatient") idPatient:Int):Call<List<Traitement>>
 
 }
