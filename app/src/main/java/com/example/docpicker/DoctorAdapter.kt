@@ -14,9 +14,7 @@ import com.example.docpicker.entity.Doctor
 import com.bumptech.glide.Glide
 class DoctorAdapter(val context: Context, var data:List<Doctor>): RecyclerView.Adapter<MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-
         return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.doctor_item, parent, false))
-
     }
 
 

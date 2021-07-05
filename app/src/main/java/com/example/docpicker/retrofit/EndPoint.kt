@@ -17,4 +17,7 @@ interface EndPoint {
     @GET("traitements/{idPatient}")
     fun getCurrentTreaments(@Path(value="idPatient") idPatient:Int):Call<List<Traitement>>
 
+    @GET("appoint/{idDoctor}")
+    fun getAppointment(@Path(value="idDoctor") idDoctor:Int):Call<Appointment>
+
 }

@@ -62,7 +62,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="396dp"
+            android:layout_height="375dp"
             android:layout_centerVertical="true"
             android:orientation="vertical">
 
@@ -74,9 +74,9 @@
                 android:layout_marginTop="60dp"
                 android:layout_marginRight="40dp"
                 android:hint="Nom du medecin"
-                android:textSize="17dp"
                 android:paddingLeft="26dp"
-                android:paddingRight="26dp" />
+                android:paddingRight="26dp"
+                android:textSize="17dp" />
 
             <TextView
                 android:id="@+id/dateRendezVous"
@@ -86,9 +86,9 @@
                 android:layout_marginTop="14dp"
                 android:layout_marginRight="40dp"
                 android:hint="19/08/2021 "
-                android:textSize="17dp"
                 android:paddingLeft="26dp"
-                android:paddingRight="26dp" />
+                android:paddingRight="26dp"
+                android:textSize="17dp" />
 
             <TextView
                 android:id="@+id/heureRendezVous"
@@ -100,9 +100,10 @@
                 android:layout_toEndOf="@+id/dateRendezVous"
                 android:layout_toRightOf="@+id/dateRendezVous"
                 android:hint="Heure : 12h30"
-                android:textSize="17dp"
                 android:paddingLeft="26dp"
-                android:paddingRight="26dp" />
+                android:paddingRight="26dp"
+                android:textSize="17dp" />
+
             <TextView
                 android:id="@+id/adresseRendezVous"
                 android:layout_width="match_parent"
@@ -113,9 +114,9 @@
                 android:layout_toEndOf="@+id/heureRendezVous"
                 android:layout_toRightOf="@+id/heureRendezVous"
                 android:hint="Boufarik bab el hara"
-                android:textSize="17dp"
                 android:paddingLeft="26dp"
-                android:paddingRight="26dp" />
+                android:paddingRight="26dp"
+                android:textSize="17dp" />
 
             <LinearLayout
                 android:layout_width="411dp"
@@ -129,9 +130,8 @@
                 android:orientation="horizontal">
 
 
-
                 <Button
-                    android:id="@+id/confirmerButton"
+                    android:id="@+id/confirmerRDVButton"
                     android:layout_width="150dp"
                     android:layout_height="55dp"
                     android:layout_marginLeft="10dp"
@@ -155,16 +155,18 @@
                     android:textStyle="normal"
                     app:backgroundTint="@color/yellow"
                     app:strokeColor="@color/yellow" />
+
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="2"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="40dp"
-                android:layout_marginLeft="40dp">
+                android:layout_weight="2"
+                android:orientation="horizontal">
 
 
             </LinearLayout>

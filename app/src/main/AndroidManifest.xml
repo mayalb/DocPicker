@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.docpicker">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DocPicker">
-        <activity android:name=".DoctorMainActivity"></activity>
+        <activity android:name=".QRScannerActivity"></activity>
+        <activity android:name=".DoctorMainActivity" />
         <activity android:name=".DemandeConseilActivity" />
         <activity android:name=".RendezVousActivity" />
         <activity android:name=".DetailDoctorActivity" />

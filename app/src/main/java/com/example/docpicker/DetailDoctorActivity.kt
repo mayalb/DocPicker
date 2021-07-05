@@ -20,8 +20,9 @@ class DetailDoctorActivity : AppCompatActivity() {
         detailSpecialite.text="Chez un "+doctor.specialite
 
         confirmerButton.setOnClickListener {
-            val rendezvousIntent = Intent(this,RendezVousActivity::class.java)
-            startActivity( rendezvousIntent)
+            val intent = Intent(this,RendezVousActivity::class.java)
+             intent.putExtra("doctor",doctor)
+            startActivity( intent)
         }
         annulerButton.setOnClickListener {
             val conseilIntent = Intent(this,DemandeConseilActivity::class.java)
