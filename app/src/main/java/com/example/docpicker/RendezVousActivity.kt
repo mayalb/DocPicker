@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_rendez_vous.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class RendezVousActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,8 @@ class RendezVousActivity : AppCompatActivity() {
         setContentView(R.layout.activity_rendez_vous)
         val doctor=intent.getSerializableExtra("doctor") as Doctor
         val iddoctor= doctor.id_doctor
+        adresseRendezVous.text= doctor.adresse
+        RendezVousMedecin.text=doctor.nom+" "+doctor.prenom
         var call= RetrofitService.endpoint.getAppointment(iddoctor)
         call.enqueue(object : Callback<Appointment> {
             override fun onFailure(call: Call<Appointment>, t: Throwable) {
@@ -32,16 +35,21 @@ class RendezVousActivity : AppCompatActivity() {
                     val appointment = response.body()
 
                     if (appointment!= null) {
-                        RendezVousMedecin.text=doctor.nom+" "+doctor.prenom
-                        dateRendezVous.text=appointment.Date
-                        heureRendezVous.text=appointment.Heure
-                        adresseRendezVous.text=doctor.adresse
+                        val date = appointment.appointmentTime
+                    //    <>
+                        var obj = IntRange(0,9)
+                        val year= date.slice(obj)
+                        Toast.makeText(this@RendezVousActivity, "yeaar:{$year}", Toast.LENGTH_SHORT).show()
+                        dateRendezVous.text= "Date :"+  year
+                        var h = IntRange(11,18)
+                        val hour= date.slice(h)
+                        heureRendezVous.text= "Heure :"+hour
+
+
 
                     }else{
                         Toast.makeText(this@RendezVousActivity, "Réponse serveur erronné", Toast.LENGTH_SHORT).show()
                     }
-
-                    //sessionManager.saveAuthToken(loginResponse.authToken)
 
                 }else{
 
@@ -55,7 +63,7 @@ class RendezVousActivity : AppCompatActivity() {
 
         confirmerRDVButton.setOnClickListener {
             val intent = Intent(this,QRScannerActivity::class.java)
-            intent.putExtra("idRDV",1)
+            intent.putExtra("idRDV",iddoctor)
             startActivity( intent)
         }
     }
