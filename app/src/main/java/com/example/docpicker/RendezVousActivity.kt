@@ -41,6 +41,7 @@ class RendezVousActivity : AppCompatActivity() {
 
                     if (appointment!= null) {
                         val date = appointment.appointmentTime
+
                         var obj=IntRange(0,9)
                         val year = date.slice(obj)
 
@@ -58,11 +59,10 @@ class RendezVousActivity : AppCompatActivity() {
                         Toast.makeText(this@RendezVousActivity, "Appoitment", Toast.LENGTH_SHORT).show()
 
 
+
                     }else{
                         Toast.makeText(this@RendezVousActivity, "Réponse serveur erronné", Toast.LENGTH_SHORT).show()
                     }
-
-                    //sessionManager.saveAuthToken(loginResponse.authToken)
 
                 }else{
 
@@ -117,8 +117,6 @@ class RendezVousActivity : AppCompatActivity() {
          intent.putExtra("heure",heure)
          startActivity( intent)
      }
-
-
 
     }
 }
