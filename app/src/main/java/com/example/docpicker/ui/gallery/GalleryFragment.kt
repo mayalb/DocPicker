@@ -80,22 +80,17 @@ class GalleryFragment : Fragment() {
                         var k=0
                         val StringDate = Currentdate.toString()
                         while(j!=i){
-                            if(data[j].treatmentEndDate.toString() >StringDate){
 
                                 traitement.add(k,data[j])
                                 k++
                              //   Toast.makeText(requireActivity(), traitement[k].Description.toString(), Toast.LENGTH_SHORT).show()
-                            }
+
                             j += 1
                         }
-                        if(traitement.size==0){
-                            Toast.makeText(requireActivity(), "NUUUUL", Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(requireActivity(), traitement.size.toString(), Toast.LENGTH_SHORT).show()
-                        }
+
 
                         TraitementList.layoutManager=LinearLayoutManager(requireActivity())
-                        TraitementList.adapter = TraitementAdapter(requireActivity(),traitement)
+                        TraitementList.adapter = TraitementAdapter(requireActivity(),data)
                     }else{
                         Toast.makeText(requireActivity(), "Aucun Traitement en cours", Toast.LENGTH_SHORT).show()
                     }

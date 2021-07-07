@@ -2,6 +2,7 @@ package com.example.docpicker
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import androidx.work.ListenableWorker
 import androidx.work.WorkerParameters
@@ -43,14 +44,18 @@ class SyncService(val ctx: Context, val workParamters: WorkerParameters): Listen
                 if(response?.isSuccessful!!) {
                     conseil.isSynchronized=1
                     RoomService.appDataBase.getConseilDao().updateMessage(conseil)
-                    RetrofitService.endpoint.addConseil(conseil)
+                //    RetrofitService.endpoint.addConseil(conseil)
 
                     future.set(Result.success())
+                    Log.d("push",response.body().toString())
+                    Log.d("push",response.code().toString())
 
                 }
                 else
                 {
                     future.set(Result.retry())
+                    Log.d("push",response.body().toString())
+                    Log.d("push",response.code().toString())
                 }
             }
 

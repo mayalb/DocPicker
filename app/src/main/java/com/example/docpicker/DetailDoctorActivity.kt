@@ -18,7 +18,6 @@ class DetailDoctorActivity : AppCompatActivity() {
         detailAdresse.text=doctor.adresse
         detailEmail.text=doctor.phone
         detailSpecialite.text="Chez un "+doctor.specialite
-
         confirmerButton.setOnClickListener {
             val intent = Intent(this,RendezVousActivity::class.java)
              intent.putExtra("doctor",doctor)

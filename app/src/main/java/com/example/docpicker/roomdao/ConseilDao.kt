@@ -14,7 +14,7 @@ interface ConseilDao {
     @Query("select * from conseil where isSynchronized=0")
     fun getMessagesToSynchronize():List<Conseil>
     @Insert
-    fun addConseil(vararg conseil: Conseil)
+    fun addConseil(conseil: Conseil)
     @Update
     fun updateMessage(conseil: Conseil)
 

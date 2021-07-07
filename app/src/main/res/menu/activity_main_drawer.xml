@@ -13,15 +13,8 @@
             android:icon="@drawable/ic_baseline_healing_24"
             android:title="@string/menu_traitement"
           />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_baseline_assignment_24"
-            android:title="@string/men_rendezvous"
-            />
-        <item
-            android:id="@+id/nav_conseil"
-            android:icon="@drawable/ic_baseline_note_24"
-            android:title="@string/menu_conseil" />
+
+
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_baseline_login_24"

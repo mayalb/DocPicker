@@ -1,11 +1,7 @@
 package com.example.docpicker.entity
 
+import java.io.Serializable
+
 data class Appointment (
-    val idAppointment:Int,
-    val idPatient:Int,
-    val idDoctor:Int,
-    val state:Int,
-    val Date :String,
-    val Heure:String,
-    val duration:Int
-)
+    val appointmentTime:String
+):Serializable
